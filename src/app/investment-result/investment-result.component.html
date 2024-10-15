@@ -1,0 +1,30 @@
+@if (getResult().length > 0) {
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Investment Value</th>
+                    <th>Interest (Year)</th>
+                    <th>Total Interest</th>
+                    <th>Invested Capital</th>
+                </tr>
+            </thead>
+            <tbody>
+             
+                @for (item of getResult(); track item.year) {
+                    <tr>
+                        <td>{{item.year}}</td>
+                        <td>{{item.investmentValue | currency }}</td>
+                        <td>{{item.interest | currency}}</td>
+                        <td>{{item.totalInterest | currency}}</td>
+                        <td>{{item.investedCapital | currency}}</td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+    
+    </div>
+}
+
